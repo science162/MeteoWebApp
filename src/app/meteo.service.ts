@@ -22,7 +22,7 @@ meteoLocal() {
       const lat = this.location.latitude;
       const lon = this.location.longitude;
       // tslint:disable-next-line:max-line-length
-      return this.http.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=20f324b831eda160155fb027bd993a70&units=imperial`).map((response: Response) =>
+      return this.http.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=20f324b831eda160155fb027bd993a70&units=imperial`).map((response: Response) =>
       response.json()).toPromise().then(
         (data) => {
           this.currentWeater = new CurrentWeather(data.name,
@@ -41,13 +41,13 @@ meteoLocal() {
 
 annotherCityWeather(city: string) {
  return this.http
-.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20f324b831eda160155fb027bd993a70&units=imperial`)
+.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20f324b831eda160155fb027bd993a70&units=imperial`)
 .map((response: Response) => response.json());
 }
 
 fiveDayForecast(city: string) {
 // tslint:disable-next-line:max-line-length
-return this.http.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=20f324b831eda160155fb027bd993a70&units=imperial`).map((response: Response) => response.json());
+return this.http.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=20f324b831eda160155fb027bd993a70&units=imperial`).map((response: Response) => response.json());
 
 }
 
