@@ -1,0 +1,15 @@
+.container{
+    background: lightgrey;
+}
+.bloc{
+ 
+    padding: 10px;   
+}
+.list-group{
+    line-height: 50px;
+}
+.img{
+    height: 420px;
+    width:570px;
+}
+

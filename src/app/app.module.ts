@@ -2,21 +2,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MeteoService } from './meteo.service';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { MeteoService } from './meteo.service';
 import { CurrentComponent } from './current/current.component';
-import { MeteoComponent } from './meteo/meteo.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { ResolveLocationService } from './resolve-location.service';
-
+import { HeaderComponent } from './header/header.component';
+import { MeteoComponent } from './meteo/meteo.component';
+import { RouterOutlet } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     CurrentComponent,
+    HeaderComponent,
     MeteoComponent
   ],
   imports: [
@@ -26,7 +26,9 @@ import { ResolveLocationService } from './resolve-location.service';
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [MeteoService, ResolveLocationService],
+  providers: [MeteoService,
+             ResolveLocationService,
+             RouterOutlet],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

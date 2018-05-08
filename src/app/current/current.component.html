@@ -1,0 +1,45 @@
+<div class="container ">
+  
+    <div class="row bloc">
+      <div class="col-md-4">
+        <form (ngSubmit)="onSubmit(form)" #form="ngForm" class=" form-group">
+         <label for="usr">Entrer la ville:</label>
+         <input type="text" placeholder="ville ou pays" required [(ngModel)] = "maMeteo.cityName" name="city" class="form-control" ><br>
+         <button name="button" type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+    </div>
+
+  <div class="row bloc" >
+      <ul class="list-group col-md-5">
+          <li class="list-group-item justify-content-between">
+            Nom Ville:
+            <span class="badge badge-default badge-pill"><h5>{{maMeteo.cityName}}</h5></span>
+          </li>
+          <li class="list-group-item justify-content-between">
+            Temperature:
+            <span class="badge badge-default badge-pill"> <h5>{{maMeteo.temp}}&deg;</h5></span>
+          </li>
+          <li class="list-group-item justify-content-between">
+          Icon:
+            <span class="badge badge-default badge-pill"> <img src="http://openweathermap.org/img/w/{{maMeteo.icon}}.png"></span>
+          </li>
+          <li class="list-group-item justify-content-between">
+              Type temps:
+              <span class="badge badge-default badge-pill"><h5>{{maMeteo.typeMeteo}}</h5></span>
+            </li>
+            <li class="list-group-item justify-content-between">
+                Temperature Minimale:
+                <span class="badge badge-default badge-pill"><h5> {{maMeteo.tempMax}}&deg;</h5></span>
+              </li>
+              <li class="list-group-item justify-content-between">
+                Temperature Maximale:
+                  <span class="badge badge-default badge-pill"><h5>{{maMeteo.tempMin}}&deg;</h5></span>
+                </li>
+        </ul>
+    <div class="col-md-6 ">
+      <img class="img" src="http://gifimage.net/wp-content/uploads/2017/10/meteo-gif-12.gif" alt="meteo">
+    </div>
+  </div>
+</div>
+

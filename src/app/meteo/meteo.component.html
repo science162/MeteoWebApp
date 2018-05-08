@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+          <form [formGroup]= "forecastForm"  class="form-group" (ngSubmit)="onSubmit()">
+          <label for="usr">Entrer la ville:</label>
+          <input type="text" placeholder="ville"  formControlName="forecastCity"  class="form-control" ><br>
+          <button name="button" type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+            <h4 class="text">METEO DE LA SEMAINE POUR LA VILLE DE:<br><br style="text-align:right"> {{forecastForm.value.forecastCity | uppercase}}</h4>
+        </div>
+    </div>
+  <div class="row">
+    <div *ngFor="let day of cityForecast" class="col-md-2" >
+        <h2>{{day.day | date: 'MMMM d'}}</h2>
+        <div class="icon">
+          <img src="http://openweathermap.org/img/w/{{day.icon}}.png">
+        </div>
+        <div class="temp">
+          <h3>{{day.tempMax}}&deg;</h3>
+          <h3>{{day.tempMax}}&deg;</h3>
+        </div>
+       
+      </div>
+  </div> 
+
+</div>
