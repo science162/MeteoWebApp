@@ -2,8 +2,8 @@
     background: lightgrey;
 }
 .bloc{
- 
-    padding: 10px;   
+
+    padding: 10px;
 }
 .list-group{
     line-height: 50px;
@@ -12,4 +12,8 @@
     height: 420px;
     width:570px;
 }
-
+.label-info{
+background: rgb(159, 159, 168);
+margin: 0 auto;
+font-style: italic;
+}

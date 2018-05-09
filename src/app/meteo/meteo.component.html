@@ -7,8 +7,9 @@
           <button name="button" type="submit" class="btn btn-primary">Search</button>
           </form>
         </div>
+        <div class="col-md-2"></div>
         <div class="col-md-6">
-            <h4 class="text">METEO DE LA SEMAINE POUR LA VILLE DE:<br><br style="text-align:right"> {{forecastForm.value.forecastCity | uppercase}}</h4>
+            <h4 class="text" style="font-style: bold">METEO DE LA SEMAINE POUR LA VILLE DE:<br><br style="text-align:right" > <span class="label label-info" style="font-size:20px">{{forecastForm.value.forecastCity | uppercase}}</span></h4>
         </div>
     </div>
   <div class="row">
@@ -21,8 +22,8 @@
           <h3>{{day.tempMax}}&deg;</h3>
           <h3>{{day.tempMax}}&deg;</h3>
         </div>
-       
+
       </div>
-  </div> 
+  </div>
 
 </div>
