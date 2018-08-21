@@ -24,9 +24,9 @@ export class CurrentComponent implements OnInit {
     this.route.data.subscribe(
       (data: {maMeteo: CurrentWeather}) => {
         this.maMeteo = data.maMeteo;
-        this.tempMax = parseFloat(this.maMeteo.tempMax) - 32;
-        this.tempMin = parseFloat(this.maMeteo.tempMin) - 32;
-        this.temp = parseFloat(this.maMeteo.temp) - 32;
+        this.tempMax = Math.round((parseFloat(this.maMeteo.tempMax) - 32) * 100) / 100;
+        this.tempMin = Math.round((parseFloat(this.maMeteo.tempMin) - 32) * 100) / 100;
+        this.temp = Math.round((parseFloat(this.maMeteo.temp) - 32) * 100) / 100;
         // console.log(' fgkhkdvs', data.maMeteo);
       }
     );
