@@ -29,8 +29,8 @@ export class MeteoComponent implements OnInit {
           const temporary = new Forecast(
               data.list[i].dt_txt,
               data.list[i].weather[0].icon,
-              data.list[i].main.temp_max,
-              data.list[i].main.temp_min);
+              Math.round((parseFloat(data.list[i].main.temp_max) - 32) * 100) / 100,
+              Math.round((parseFloat(data.list[i].main.temp_min) - 32) * 100) / 100);
           this.cityForecast.push(temporary);
         }
       }

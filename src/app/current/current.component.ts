@@ -14,12 +14,19 @@ import { NgForm } from '@angular/forms';
 export class CurrentComponent implements OnInit {
 
   maMeteo: CurrentWeather;
+  tempMax: Number;
+  tempMin: Number;
+  temp: Number;
+
   constructor(private meteoService: MeteoService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.data.subscribe(
       (data: {maMeteo: CurrentWeather}) => {
         this.maMeteo = data.maMeteo;
+        this.tempMax = parseFloat(this.maMeteo.tempMax) - 32;
+        this.tempMin = parseFloat(this.maMeteo.tempMin) - 32;
+        this.temp = parseFloat(this.maMeteo.temp) - 32;
         // console.log(' fgkhkdvs', data.maMeteo);
       }
     );
